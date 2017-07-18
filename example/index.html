@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Title Template</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="shortcut icon" media="all" type="image/x-icon" href="favicon.ico">
+		<style>
+			
+			.main-nav {
+			    width: 100%;
+			    position: fixed;
+			    left: 0;
+			    top: 0;
+			    height: 100%;
+			    z-index: 4;
+			}
+			@media (min-width: 62em) {
+			    .main-nav {
+			        width: 100%;
+			        position: relative;
+			        left: auto;
+			        top: auto;
+			        padding-top: 0;
+			        height: auto;
+			        display: block;
+			    }
+			}
+			
+			.main-nav__list {
+			    margin: 0;
+			    padding: 0;
+			    list-style: none;
+			    width: 18rem;
+			    background-color: #E6E6E6;
+			    z-index: 2;
+			    position: absolute;
+			    height: 100%;
+			    transition: transform 0.3s linear;
+			    overflow: scroll;
+			}
+			@media (min-width: 62em) {
+			    .main-nav__list {
+			        transform: none;
+			        position: relative;
+			        width: auto;
+			        overflow: visible;
+			    }
+			}
+			.main-nav__item {
+			    display: block;
+			}
+			@media (min-width: 62em) {
+			    .main-nav__item {
+			        display: inline-block;
+			        position: relative;
+			    }
+			    .main-nav__item:hover .submenu {
+			        visibility: visible;
+			        opacity: 1;
+			    }
+			}
+
+			.main-nav__link {
+			    display: block;
+			    font-size: 1.125rem;
+			    padding: 1rem;
+			    transition: padding 0.3s ease;
+			    font-weight: bold;
+			    position: relative;
+			    border-bottom: 1px solid #bec3c4;
+			    position: relative;
+			    z-index: 3;
+			    outline: none;
+			}
+
+			.main-nav__link:link,
+			.main-nav__link:visited {
+			    color: #000;
+			    text-decoration: none;
+			}
+			.main-nav__link:hover,
+			.main-nav__link:focus {
+			    padding-left: 1.5rem;
+			    text-decoration: underline;
+			    background-color: #B6B4B6;
+			}
+
+			@media (min-width: 62em) {
+			    .main-nav__link {
+			        border-bottom: none;
+			        position: relative;
+			        z-index: 2;
+			    }
+
+			    .main-nav__link:hover,
+			    .main-nav__link:focus,
+			    .main-nav__link.is-active {
+			        padding-left: 1rem;
+			    }
+			}
+			.submenu{
+			    visibility: hidden;
+			    position: fixed;
+			    left: -100%;
+			    width: 18rem;
+			    height: 100%;
+			    top: 0;
+			    background-color: #FAFAFA;
+			    transition: left 0.35s linear;
+			    z-index: 4;
+			    list-style: none;
+			    margin: 0;
+			    padding: 0;
+			    border-right: solid 1px #bec3c4;
+			}
+
+			@media (min-width: 62em) {
+				.submenu{
+					position: absolute;
+					left: 0;
+					width: 12rem;
+					top: 100%;
+					height: auto;
+					border: solid 1px #bec3c4;
+					border-top: none;
+				}
+			}
+
+			.is-revealed .submenu{
+			    visibility: visible;
+			    transition: left 0.35s linear;
+			    left: 0;
+			}
+			.quick-show .submenu{
+			    transition: none;
+			}
+
+			.submenu__item{
+				border-bottom: 1px solid #bec3c4;
+			}
+
+			@media (min-width: 62em) {
+				
+			}
+
+			.submenu__link{
+				display: block;
+				padding: 0.5rem 1rem;
+				outline: none;
+				text-decoration: none;
+			}
+
+			.submenu__link:link,
+			.submenu__link:visited {
+			    color: #000;
+			    text-decoration: none;
+			}
+			.submenu__link:hover,
+			.submenu__link:focus {
+			    padding-left: 1.25rem;
+			    text-decoration: underline;
+			    background-color: #E6E6E6;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<nav id="main-nav" aria-labelledby="main-nav-heading" class="main-nav">
+			<ul role="menubar" class="main-nav__list js-a11y-menu">
+				<li class="main-nav__item js-menu-items">
+					<a href="#" aria-haspopup="true" aria-expanded="false" role="menuitem" class="main-nav__link">About us</a>
+					<ul aria-label="About us Sub Menu" role="menu" class="submenu js-sub-menu">
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 1</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 2</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 3</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 4</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 5</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 6</a>
+						</li>
+					</ul>
+				</li>
+				<li class="main-nav__item js-menu-items">
+					<a href="#" aria-haspopup="true" aria-expanded="false" role="menuitem" class="main-nav__link">Research</a>
+					<ul aria-label="Research Sub Menu" role="menu" class="submenu js-sub-menu">
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 1</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 2</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 3</a>
+						</li>				
+					</ul>
+				</li>
+				<li class="main-nav__item js-menu-items">
+					<a href="about" aria-haspopup="true" aria-expanded="false" role="menuitem" class="main-nav__link">Publications</a>
+					<ul aria-label="Publications Sub Menu" id="sub-menu-3" role="menu" class="submenu js-sub-menu">
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 1</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 2</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 3</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 4</a>
+						</li>
+					</ul>
+				</li>
+				<li class="main-nav__item js-menu-items">
+					<a href="about" aria-haspopup="true" aria-expanded="false" role="menuitem" class="main-nav__link">Newsroom</a>
+					<ul aria-label="Newsroom Sub Menu" id="sub-menu-5" role="menu" class="submenu js-sub-menu">
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 1</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 2</a>
+						</li>
+					</ul>
+				</li>
+				<li class="main-nav__item js-menu-items">
+					<a href="about" aria-haspopup="true" aria-expanded="false" role="menuitem" class="main-nav__link">Contact us</a>
+					<ul aria-label="Contact us Sub Menu" id="sub-menu-6" role="menu" class="submenu js-sub-menu">
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 1</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 2</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 3</a>
+						</li>
+						<li class="submenu__item">
+							<a href="#" class="submenu__link"  role="menuitem">Link 4</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<script src="../dist/a11y-menu.js"></script>
+		<script src="./untitled.js"></script>
+	</body>
+</html>
